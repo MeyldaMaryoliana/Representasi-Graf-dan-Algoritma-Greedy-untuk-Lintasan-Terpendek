@@ -1,0 +1,32 @@
+import numpy as np
+nodes = ['A','B', 'C', 'D']
+A = np.array([[0,3,5,0],
+              [3,0,0,4],
+              [5,0,0,2],
+              [0,4,2,0]
+])
+
+visited = [0] # mulai dari A (indeks 0)
+path = ['A']
+total = 0
+
+while len(visited) < len(nodes):
+     curr = visited[-1]
+     min_weight = float('inf')
+     next_node = None
+    
+     for j in range(len(nodes)):
+       if A[curr][j] != 0 and j not in visited and A[curr][j] < min_weight:
+         min_weight = A[curr][j]
+         next_node = j
+
+     if next_node is None:
+       break
+
+     visited.append(next_node)
+     path.append(nodes[next_node])
+     total += min_weight
+
+     
+print("lintasan:","->".join(path))
+print("jarak total:",total)
