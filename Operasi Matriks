@@ -1,0 +1,36 @@
+# Membuat Matriks Baru
+import numpy as np
+M1 = np.array([[1,2],[3,4]])
+M2 = np.array([[5,6],[7,8]])
+
+# Penjumlahan Matriks
+M_tambah = M1 + M2 
+print("penjumlahan matriks:")
+print(M_tambah)
+
+# Pengurangan Matriks
+M_kurang = M1 - M2 
+print("pengurangan matriks:")
+print(M_kurang)
+
+# Perkalian Matriks (Dot Product)
+M_kali = np.dot(M1,M2) 
+# atau
+M_kali = M1 @ M2 
+print("perkalian matriks:")
+print(M_kali)
+
+# Transpose Matriks
+M_transpose =  M1.T 
+print("matriks transpose:")
+print(M_transpose)
+
+# Mengakses Elemen Matriks
+print("Elemen Matriks:")
+print(M1[0][1]) # baris 1 kolom 2
+
+# Membuat Matriks Nol/Identitas
+Z = np.zeros((3,3))
+print("Matriks nol", Z)
+I = np.eye(3)
+print("Matriks Identitas", I)
